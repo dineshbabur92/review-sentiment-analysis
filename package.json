@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "http-status": "^1.0.1",
+    "mongoose": "^4.9.0",
+    "morgan": "^1.8.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {}
+}

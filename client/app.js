@@ -1,0 +1,1 @@
+var reviewApp = angular.module("reviewApp", ["ngRoute", "ngResource"]);
