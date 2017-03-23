@@ -1,7 +1,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require("body-parser");
-mongoose.connect('mongodb://localhost/test');
+//mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://dineshbabur92:Mongo7482@ds139480.mlab.com:39480/review_sentiment_analysis');
 var Product = mongoose.model('Product', require('./product'), 'products');
 
 var app = express();
