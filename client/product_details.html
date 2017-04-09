@@ -23,6 +23,7 @@
   </div>
   <ul class="list-group">
     <li ng-repeat="review in productDetails.reviews" class="list-group-item">
+    <!-- <li ng-repeat="review in productDetails.reviews" class="list-group-item" ng-if="review.sentiment == 'positive' || review.sentiment == 'neutral'"> -->
       <span>{{review.content}}</span>
       <!-- <span class="pull-right">{{review.sentiment}}</span> -->
       <span class="label label-success pull-right" ng-if="review.sentiment == 'positive'">{{review.sentiment}}</span>
