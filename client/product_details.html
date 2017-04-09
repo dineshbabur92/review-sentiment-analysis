@@ -22,7 +22,13 @@
 -->
   </div>
   <ul class="list-group">
-    <li ng-repeat="review in productDetails.reviews" class="list-group-item">{{review.content}}</li>
+    <li ng-repeat="review in productDetails.reviews" class="list-group-item">
+      <span>{{review.content}}</span>
+      <!-- <span class="pull-right">{{review.sentiment}}</span> -->
+      <span class="label label-success pull-right" ng-if="review.sentiment == 'positive'">{{review.sentiment}}</span>
+      <span class="label label-danger pull-right" ng-if="review.sentiment == 'negative'">{{review.sentiment}}</span>
+      <span class="label label-warning pull-right" ng-if="review.sentiment == 'neutral'">{{review.sentiment}}</span>
+    </li>
 <!--    <textarea class="form-control"></textarea>-->
   </ul>
 </div>

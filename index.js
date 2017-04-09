@@ -1,8 +1,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require("body-parser");
-//mongoose.connect('mongodb://localhost/test');
-mongoose.connect('mongodb://dineshbabur92:Mongo7482@ds139480.mlab.com:39480/review_sentiment_analysis');
+mongoose.connect('mongodb://localhost/test');
+// mongoose.connect('mongodb://dineshbabur92:Mongo7482@ds139480.mlab.com:39480/review_sentiment_analysis');
 var Product = mongoose.model('Product', require('./product'), 'products');
 
 var app = express();
@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/client'));
 
 var prepareProducts = [
     
-    {"name": "HTC Desire", "image":"\/images\/htc.jpg", "description": ["Octa-Core processor", "5.5\" HD screen", "13.0 MP primary", "8.0 MP secondary camera", "Android + HTC Sense Platform"], "reviews": [
+    {"name": "HTC", "image":"\/images\/htc.jpg", "description": ["Octa-Core processor", "5.5\" HD screen", "13.0 MP primary", "8.0 MP secondary camera", "Android + HTC Sense Platform"], "reviews": [
         
 //        {"content":"review1"},
 //        {"content":"review2"},
@@ -38,7 +38,8 @@ var prepare = function(){
     
 };
                                              
-//prepare();
+// prepare();
+
 
 
 app.get('/products', function(req, res){
@@ -84,6 +85,7 @@ app.post('/product/:id/review', function(req, res){
         }
         if(!product.reviews)
             product.reviews = []
+        // review.product_name = product.name;
         product.reviews.push(review);
         product.save(function(err, result){
            if(err){

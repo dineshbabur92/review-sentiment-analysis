@@ -10,12 +10,15 @@ var productSchema = {
     description:[{
         type: String
     }],
-  reviews: [{
+  reviews: [
+    {
+    // product_name: {type: String},
     content: {type: String},
-    sentiment: {type: String, enum: ['POS', 'NEG', "NEU"], Default: 'NEU'},
-    approve_version: {type: Number, Default: 0}
+    sentiment: {type: String}
+    // approve_version: {type: Number, Default: 0}
             
-  }]
+    }
+  ]
 };
 
 module.exports = new mongoose.Schema(productSchema);

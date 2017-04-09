@@ -28,7 +28,10 @@ reviewApp.controller("productDetailsController",["$scope", "$routeParams", "$log
         
         $http.post("/product/"+ $scope.productId + "/review", {
             review: {
-                content: $scope.reviewContent
+                content:
+                // review:
+                 $scope.reviewContent,
+                 sentiment: "neutral"
             }
         }).error(function(error){
             
